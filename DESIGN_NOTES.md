@@ -1,4 +1,4 @@
-# Interview guide - complaint-triage
+# Design notes - complaint-triage
 
 ## What it does, in three sentences
 
@@ -28,7 +28,7 @@ for the biggest confusion (debt collection vs. credit reporting) did *not* help 
 - Run three seeds / re-samples to put an error bar on the 76.5 %.
 - Compare against a cheap non-LLM baseline (TF-IDF + logistic regression) trained on CFPB data; it may be competitive.
 
-## Five questions an interviewer would ask, with honest answers
+## Design questions and answers
 
 **1. Is 76.5 % good?**
 Against an 11 % baseline over nine categories it is a large lift, but not deployable as an unattended router. The
@@ -51,7 +51,7 @@ The model does see the same product vocabulary a human reviewer sees, which is t
 Per-category error rates, a log of every model decision with its stated reason, a human-review queue for low-confidence
 or high-urgency items, and a policy for how the category list is updated when CFPB changes theirs.
 
-## Numbers to have in your head
+## Key figures
 
 Random sample 571 complaints: 86.5 % vs 84.2 % majority baseline · balanced 540 (60 x 9): 76.5 % vs 11.1 % · prompt v2 73.7 % ·
 model claude-haiku-4-5 · data fetched live from the CFPB API, cached in data/ (gitignored).

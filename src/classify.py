@@ -48,7 +48,7 @@ RESULTS_FILES = {
     ("balanced", 2): ROOT / "data" / "results_balanced_v2.csv",
 }
 
-# Model name as a constant, per the brief, so it's a one-line swap later.
+# Model name as a constant so it's a one-line swap later.
 # Haiku is Anthropic's fastest/cheapest model family — a good fit for a
 # classification task like this where we're doing hundreds of short calls.
 MODEL_NAME = "claude-haiku-4-5-20251001"
